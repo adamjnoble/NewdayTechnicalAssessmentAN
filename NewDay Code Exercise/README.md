@@ -22,9 +22,9 @@ TO EXECUTE
 - Open cmd (assuming Windows OS)
 - cd to the directory
 - Run the line below:
-spark-submit MovieRatingAnalysis.py 
+spark-submit MovieRatingAnalysis.py
+
+(given system environment variables are set correctly.)
 
 FUTURE PROJECT PROGRESSION
 - I would invest more time in building CI pipelines, so that any future commits will automatically be built and tested upon code commit. Out of experience, this would be Jenkins for me.
-
-(given system environment variables are set correctly.)
