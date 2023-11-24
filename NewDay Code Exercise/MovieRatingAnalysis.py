@@ -105,7 +105,7 @@ top3PerUserWithDetailDfPath = 'output/top3PerUserWithDetailDf.csv'
 
 # Create the CSVs for each Dataframe
 
-# Write the Movies Dataframe to CSV
+# Write the Movies Dataframe to CSV, using coalesce to 'glue' the partitioned data back together to create a singular CSV.
 moviesDf.coalesce(1).write.mode("overwrite").option("header", True).option("delimiter",",").csv(movieDfOutputPath)
 # Write the Ratings Dataframe to CSV
 ratingDf.coalesce(1).write.mode("overwrite").option("header", True).option("delimiter",",").csv(ratingsDfOutputPath)
