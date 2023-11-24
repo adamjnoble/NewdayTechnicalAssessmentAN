@@ -108,11 +108,11 @@ top3PerUserWithDetailDfPath = 'output/top3PerUserWithDetailDf.csv'
 # Write the Movies Dataframe to CSV
 moviesDf.coalesce(1).write.mode("overwrite").option("header", True).option("delimiter",",").csv(movieDfOutputPath)
 # Write the Ratings Dataframe to CSV
-ratingDf.write.mode("overwrite").option("header", True).option("delimiter",",").csv(ratingsDfOutputPath)
+ratingDf.coalesce(1).write.mode("overwrite").option("header", True).option("delimiter",",").csv(ratingsDfOutputPath)
 # Write the Movies with Aggregate Ratings Dataframe to CSV
 moviesWithAggregateRatingsDf.coalesce(1).write.mode("overwrite").option("header", True).option("delimiter",",").csv(movieWithAggregateRatingDfPath)
 # Write the Top 3 Movie Ratings Per User With Detail Dataframe to CSV
-top3PerUserWithDetailDf.write.mode("overwrite").option("header", True).option("delimiter",",").csv(top3PerUserWithDetailDfPath)
+top3PerUserWithDetailDf.coalesce(1).write.mode("overwrite").option("header", True).option("delimiter",",").csv(top3PerUserWithDetailDfPath)
 
 # End the Spark Session
 SparkSession.stop()
